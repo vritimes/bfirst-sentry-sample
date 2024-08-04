@@ -1,6 +1,7 @@
 import "./instrument.js"
 
-import { setupExpressErrorHandler, setTag } from '@sentry/node'
+// import { setupExpressErrorHandler, setTag } from '@sentry/node'
+import { setTag } from '@sentry/node'
 
 import express from 'express'
 const app: express.Express = express()
@@ -15,7 +16,7 @@ app.get("/debug-sentry", function mainHandler(req, res) {
   throw new Error("My first Sentry error!");
 });
 
-setupExpressErrorHandler(app);
+// setupExpressErrorHandler(app);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
